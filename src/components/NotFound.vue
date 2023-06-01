@@ -1,5 +1,7 @@
 <template>
-    <div class="not_found">Ничего не найдено</div>
+    <div class="not_found">
+        <slot></slot>
+    </div>
 </template>
 <script>
     export default {

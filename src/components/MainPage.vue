@@ -15,10 +15,10 @@
 
                         </div>
                         <div v-else="error">
-                            <NotFound/>
+                            <NotFound>Неизвестная ошибка</NotFound>
                         </div>
                         <div v-if="searchQuery && !filteredList.length">
-                            <NotFound/>
+                            <NotFound>Ничего не найдено</NotFound>
                         </div>
                     </div>
                 </div>
