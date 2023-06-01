@@ -1,24 +1,15 @@
-# ghilfond-test
+1. Приложение запускается при помощи команды pm run serve
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+2.1.SPA реализовано с использованием Vue,Vuex.
+  2.Созданы основные компоненты,они находятся в папке components
+  3.Использоваы actions, mutations. 
+  3.С помощью препроцессора Scss созданы стили
+  4.Во время всех запросов пользователь получает сигнал через прелоадер, что происходит запрос.
+  5.Использована изоляцию стилей.
+  
+3.Использовал документацию API
+  https://jsonplaceholder.typicode.com
+  
+  Пример запроса пользователя по id:
+  https://jsonplaceholder.typicode.com/users/1
+  method: GET
