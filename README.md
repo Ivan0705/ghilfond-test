@@ -13,8 +13,8 @@
 8. Использована изоляцию стилей.
   
 9. Использовал документацию API
-  https://jsonplaceholder.typicode.com
+   https://jsonplaceholder.typicode.com
   
-  Пример запроса пользователя по id:
-  https://jsonplaceholder.typicode.com/users/1
-  method: GET
+   Пример запроса пользователя по id:
+   https://jsonplaceholder.typicode.com/users/1
+   method: GET
