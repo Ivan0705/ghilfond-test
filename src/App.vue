@@ -1,31 +1,17 @@
 <template>
-    <div class="app_body">
-        <Header/>
-        <router-view>
-        </router-view>
-    </div>
+    <MainPage/>
 </template>
 
 <script>
-
-    import Header from "./components/Header";
+    import MainPage from "./page/MainPage";
 
     export default {
         name: 'App',
         components: {
-            Header
-
+            MainPage
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    $white: #FFFFFF;
-
-    .app_body {
-        width: 1266px;
-        height: 748px;
-        background: $white;
-        margin-left: 5px;
-    }
 </style>

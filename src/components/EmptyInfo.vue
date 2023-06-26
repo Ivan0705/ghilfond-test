@@ -1,6 +1,6 @@
 <template>
     <div class="info_empty ">
-        <div class="text_center border">Выберите сотрудника, чтобы посмотреть</div>
+        <div class="text_center">Выберите сотрудника, чтобы посмотреть</div>
     </div>
 </template>
 
@@ -28,7 +28,7 @@
         height: 17px;
         margin-top: 250px;
         margin-left: 284px;
-        font-family: 'Montserrat', serif;
+        font-family: $font_family;
         font-style: normal;
         font-weight: 400;
         font-size: 14px;

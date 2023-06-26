@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="text font_family">Жилфонд</div>
-        <div class="user font_family">Пользователь</div>
+        <div class="text">Жилфонд</div>
+        <div class="user">Пользователь</div>
     </div>
 
 </template>
@@ -14,10 +14,6 @@
 <style lang="scss" scoped>
     @import "../SCCS/Styles";
 
-    .font_family {
-        font-family: $font_family;
-    }
-
     .text {
         width: 171px;
         height: 39px;
@@ -27,6 +23,7 @@
         line-height: 39px;
         color: $red;
         margin-bottom: 30px;
+        font-family: $font_family;
     }
 
     .user {
@@ -40,5 +37,6 @@
         font-size: 16px;
         line-height: 20px;
         color: $dark_gray;
+        font-family: $font_family;
     }
 </style>

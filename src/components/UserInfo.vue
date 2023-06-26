@@ -3,13 +3,13 @@
         <div class="wrapper_user_info ">
             <img src=../images/profile.png alt="profile"/>
             <div>
-                <div class="name_user_info margin-left font_family">{{user.name}}</div>
+                <div class="name_user_info">{{user.name}}</div>
                 <br/>
-                <div class="email_user_info margin-left dark_gray font_family">{{user.email}}</div>
+                <div class="email_user_info">{{user.email}}</div>
                 <br/>
-                <div class="phone_user_info margin-left dark_gray font_family">{{user.phone}}</div>
-                <div class="aboutMe_user_info margin-left dark_gray font_family">О себе</div>
-                <div class="content_user_info margin-left dark_gray font_family">
+                <div class="phone_user_info">{{user.phone}}</div>
+                <div class="aboutMe_user_info">О себе</div>
+                <div class="content_user_info">
                     Email:{{user.username}}
                     <br/>
                     street: {{user.address.street}}
@@ -35,7 +35,6 @@
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -62,18 +61,6 @@
         display: flex;
     }
 
-    .margin-left {
-        margin-left: 61px;
-    }
-
-    .dark_gray {
-        color: $dark_gray;
-    }
-
-    .font_family {
-        font-family: 'Montserrat', serif;
-    }
-
     img {
         margin-top: 30px;
         margin-left: 21px;
@@ -91,6 +78,8 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
+        margin-left: 61px;
+        font-family: $font_family;
     }
 
     .email_user_info {
@@ -101,6 +90,9 @@
         font-weight: 600;
         font-size: 14px;
         line-height: 140%;
+        margin-left: 61px;
+        font-family: $font_family;
+        color: $dark_gray;
     }
 
     .phone_user_info {
@@ -111,6 +103,9 @@
         font-weight: 600;
         font-size: 14px;
         line-height: 140%;
+        margin-left: 61px;
+        font-family: $font_family;
+        color: $dark_gray;
     }
 
     .aboutMe_user_info {
@@ -121,6 +116,9 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 140%;
+        margin-left: 61px;
+        font-family: $font_family;
+        color: $dark_gray;
     }
 
     .content_user_info {
@@ -131,5 +129,8 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
+        margin-left: 61px;
+        font-family: $font_family;
+        color: $dark_gray;
     }
 </style>

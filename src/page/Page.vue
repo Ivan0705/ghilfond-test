@@ -2,10 +2,10 @@
     <div class="wrapper_user_info"><label>
     </label>
         <div>
-            <div class="search margin_left font_family">Поиск сотрудников</div>
-            <textarea v-model='searchQuery' type="text" class="input margin_left" placeholder="Введите id или имя"
+            <div class="search">Поиск сотрудников</div>
+            <textarea v-model='searchQuery' type="text" class="input" placeholder="Введите id или имя"
                       @update:model-value="setSearchQuery"></textarea>
-            <div class="results margin_left font_family">Результаты</div>
+            <div class="results">Результаты</div>
             <div>
                 <div v-if="!isLoading">
                     <div>
@@ -44,15 +44,15 @@
 
 </template>
 <script>
-    import UserItem from "./UserItem";
+    import UserItem from "../components/UserItem";
     import {mapActions, mapGetters, mapMutations, mapState} from "vuex";
-    import NotFound from "./NotFound";
-    import UserInfo from "./UserInfo";
-    import EmptyInfo from "./EmptyInfo";
-    import Preloader from "./Preloader";
+    import NotFound from "../components/NotFound";
+    import UserInfo from "../components/UserInfo";
+    import EmptyInfo from "../components/EmptyInfo";
+    import Preloader from "../components/Preloader";
 
     export default {
-        name: 'main-page',
+        name: 'page',
         components: {Preloader, EmptyInfo, UserInfo, NotFound, UserItem},
         data() {
             return {
@@ -98,14 +98,6 @@
 <style lang="scss" scoped>
     @import "../SCCS/Styles";
 
-    .margin_left {
-        margin-left: 20px;
-    }
-
-    .font_family {
-        font-family: $font_family;
-    }
-
     .wrapper_user_info {
         display: flex;
         width: 1266px;
@@ -128,7 +120,8 @@
         border: 1.5px solid $light_gray;
         border-radius: 8px;
         outline: none;
-        overflow: hidden
+        overflow: hidden;
+        margin-left: 20px;
     }
 
     .info {
@@ -157,6 +150,8 @@
         font-size: 16px;
         line-height: 140%;
         color: $dark_gray;
+        margin-left: 20px;
+        font-family: $font_family;
     }
 
     .search {
@@ -170,5 +165,7 @@
         font-size: 16px;
         line-height: 140%;
         color: $dark_gray;
+        margin-left: 20px;
+        font-family: $font_family;
     }
 </style>

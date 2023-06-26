@@ -2,9 +2,9 @@
     <div class="user_profile">
         <div>
             <div class="user_profile_photo"><img src=../images/profile.png alt="profile"/></div>
-            <div class="user_profile_name font_family">{{user.name}}</div>
+            <div class="user_profile_name font_user_item">{{user.name}}</div>
             <br/>
-            <div class="user_profile_email font_family">{{user.email}}</div>
+            <div class="user_profile_email font_user_item">{{user.email}}</div>
         </div>
     </div>
 </template>
@@ -39,14 +39,14 @@
         width: 70px;
         height: 70px;
         border-right: 1px solid $light_gray;
+
     }
 
-    .font_family {
-        font-family: 'Montserrat', serif;
+    .font_user_item {
+        font-family: $font_family;
         font-style: normal;
         margin-left: 75px;
     }
-
 
     .user_profile_name {
         width: 115px;
@@ -55,7 +55,7 @@
         font-weight: 600;
         font-size: 14px;
         line-height: 17px;
-        color: #333333;
+        color: $dark_gray;
     }
 
     .user_profile_email {
