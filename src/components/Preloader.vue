@@ -1,8 +1,11 @@
 <template>
-    <img src=../images/preloader.gif alt="preloading"/>
     <div class="preloader">
-        Идет загрузка...
+        <img class="preloader__image" src=../images/preloader.gif alt="preloading"/>
+        <div>
+            Идет загрузка...
+        </div>
     </div>
+
 </template>
 <script>
     export default {
@@ -10,15 +13,16 @@
     }
 </script>
 <style lang="scss">
-    @import "../SCCS/Styles";
+    @import "../SCCS/Colors";
+    @import "../SCCS/Fonts";
 
     .preloader {
         margin-left: 20px;
         margin-top: 10px;
-        font-family: $font_family;
-    }
+        font-family: $font-montserrat;
 
-    img {
-        width: 90px;
+        &__image {
+            width: 90px;
+        }
     }
 </style>

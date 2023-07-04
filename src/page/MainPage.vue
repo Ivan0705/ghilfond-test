@@ -1,5 +1,5 @@
 <template>
-    <div class="app_body">
+    <div class="main-page">
         <Header/>
         <router-view>
         </router-view>
@@ -20,7 +20,7 @@
 <style lang="scss" scoped>
     $white: #FFFFFF;
 
-    .app_body {
+    .main-page {
         width: 1266px;
         height: 748px;
         background: $white;

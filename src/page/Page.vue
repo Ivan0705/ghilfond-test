@@ -1,17 +1,16 @@
 <template>
-    <div class="wrapper_user_info"><label>
-    </label>
+    <div class="page">
         <div>
-            <div class="search">Поиск сотрудников</div>
-            <textarea v-model='searchQuery' type="text" class="input" placeholder="Введите id или имя"
+            <div class="page__search">Поиск сотрудников</div>
+            <textarea v-model='searchQuery' type="text" class="page__input" placeholder="Введите id или имя"
                       @update:model-value="setSearchQuery"></textarea>
-            <div class="results">Результаты</div>
+            <div class="page__results">Результаты</div>
             <div>
                 <div v-if="!isLoading">
                     <div>
                         <div v-if="!error">
-                            <UserItem v-for="user in filteredList" :key="user.id" :user="user"
-                                      @click="getId(user.id)"/>
+                            <User v-for="user in filteredList" :key="user.id" :user="user"
+                                  @click="getId(user.id)"/>
 
                         </div>
                         <div v-else="error">
@@ -27,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="info">
+        <div class="page__info">
             <div v-if="id>0">
                 <div v-if="!isLoadingInfo">
                     <UserInfo :user="users[this.id-1]"/>
@@ -37,23 +36,23 @@
                 </div>
             </div>
             <div v-else>
-                <EmptyInfo/>
+                <SelectEmployee/>
             </div>
         </div>
     </div>
 
 </template>
 <script>
-    import UserItem from "../components/UserItem";
     import {mapActions, mapGetters, mapMutations, mapState} from "vuex";
     import NotFound from "../components/NotFound";
     import UserInfo from "../components/UserInfo";
-    import EmptyInfo from "../components/EmptyInfo";
+    import User from "../components/User";
+    import SelectEmployee from "../components/SelectEmployee";
     import Preloader from "../components/Preloader";
 
     export default {
         name: 'page',
-        components: {Preloader, EmptyInfo, UserInfo, NotFound, UserItem},
+        components: {Preloader, SelectEmployee, UserInfo, NotFound, User},
         data() {
             return {
                 id: 0,
@@ -96,76 +95,71 @@
 
 </script>
 <style lang="scss" scoped>
-    @import "../SCCS/Styles";
+    @import "../SCCS/Colors";
+    @import "../SCCS/Fonts";
 
-    .wrapper_user_info {
+    .page {
         display: flex;
         width: 1266px;
         height: 575px;
         background: $white2;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
-    }
+        font-family: $font-montserrat;;
 
-    .input {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 16px;
-        gap: 16px;
-        width: 240px;
-        height: 46px;
-        background: $white;
-        border: 1.5px solid $light_gray;
-        border-radius: 8px;
-        outline: none;
-        overflow: hidden;
-        margin-left: 20px;
-    }
+        &__input {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 16px;
+            gap: 16px;
+            width: 240px;
+            height: 46px;
+            background: $white;
+            border: 1.5px solid $light_gray;
+            border-radius: 8px;
+            outline: none;
+            overflow: hidden;
+            margin-left: 20px;
+        }
 
-    .info {
-        position: absolute;
-        width: 975px;
-        height: 575px;
-        margin-left: 290px;
-        background: $white2;
-        border-left: 1px solid $light_gray;
-        border-radius: 0 10px 10px 0;
-    }
+        &__info {
+            position: absolute;
+            width: 975px;
+            height: 575px;
+            margin-left: 290px;
+            background: $white2;
+            border-left: 1px solid $light_gray;
+            border-radius: 0 10px 10px 0;
+        }
 
-    textarea {
-        height: 24px;
-        width: 108px;
-    }
+        &__results {
+            margin-top: 15px;
+            width: 233px;
+            height: 22px;
+            left: 70px;
+            top: 254px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 140%;
+            color: $dark_gray;
+            margin-left: 20px;
+        }
 
-    .results {
-        margin-top: 15px;
-        width: 233px;
-        height: 22px;
-        left: 70px;
-        top: 254px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 140%;
-        color: $dark_gray;
-        margin-left: 20px;
-        font-family: $font_family;
-    }
-
-    .search {
-        width: 261px;
-        height: 22px;
-        margin-top: 27px;
-        margin-bottom: 22px;
-        top: 142px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 140%;
-        color: $dark_gray;
-        margin-left: 20px;
-        font-family: $font_family;
+        &__search {
+            width: 261px;
+            height: 22px;
+            margin-top: 27px;
+            margin-bottom: 22px;
+            top: 142px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 140%;
+            color: $dark_gray;
+            margin-left: 20px;
+        }
     }
 </style>
